@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/introsecond" />
+
+    <TextView
+        android:id="@+id/tvWallet"
+        style="@style/customFontStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_title_third"
+        android:textColor="#000"
+        android:textSize="@dimen/title_24sp" />
+
+
+    <TextView
+        android:id="@+id/tvRecords"
+        style="@style/customFontStyleRobotoRegular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/marginStart_40dp"
+        android:layout_marginEnd="@dimen/marginEnd_40dp"
+        android:gravity="center_horizontal"
+        android:text="@string/intro_desc_third"
+        android:textColor="#000"
+        android:textSize="@dimen/subtilte_16sp" />
+
+</LinearLayout>
