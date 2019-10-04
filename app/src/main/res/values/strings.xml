@@ -18,7 +18,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="pay_for_all_your_monthly_needs_with_one_click">Pay for all your monthly needs with \n one-click</string>
+    <string name="pay_for_all_your_monthly_needs_with_one_click">Pay for all your monthly needs with \none-click</string>
     <string name="please_wai">Please wait</string>
     <string name="server_not_responding">Server not responding.</string>
     <string name="networ_error">Please check your internet connection</string>
@@ -215,6 +215,15 @@
     <string name="restaurants">Restaurants</string>
     <string name="utilities">Utilities</string>
     <string name="recent">Recent</string>
+    <string name="title_activity_on_boarding_get_started">OnBoardingGetStarted</string>
+    <string name="title_activity_home">HomeActivity</string>
 
+    <string name="is_registered">Is Registered</string>
+    <string name="not_registered">Not Registered</string>
+
+    <!--implementing otpvie-->
+    <string name="verification_code_subtext">Please type the verification code sent to +xxxxxxxxxx</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="validate">Validate</string>
 
 </resources>

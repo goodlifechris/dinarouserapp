@@ -39,7 +39,7 @@ public class RecieptActivityRestaurant extends AppCompatActivity implements View
     }
     private void setData() {
 
-        String dat[] = date.split("-");
+        String[] dat = date.split("-");
         String finalYear = dat[0];
         String month = dat[1];
         String tempYear = dat[2];

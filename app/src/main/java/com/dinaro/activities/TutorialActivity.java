@@ -1,21 +1,30 @@
 package com.dinaro.activities;
 
 import android.content.Intent;
+
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
+
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+
 import androidx.annotation.RequiresApi;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import com.dinaro.R;
 import com.dinaro.adapters.TutorialAdapter;
-import com.dinaro.databinding.ActivityTutorialBinding;
+import com.dinaro.adapters.ViewPagerAdapter;
+import com.dinaro.fragments.FirstFragment;
+import com.dinaro.fragments.FirstNewFragment;
+import com.dinaro.fragments.ThirdFragment;
 import com.dinaro.utils.PrefManager;
 
 import java.util.Timer;
@@ -26,33 +35,13 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 
     private static int num = 2;
     private static int currentpage = 0;
-    private static ActivityTutorialBinding mBinding;
 
-    @BindingAdapter({"bind:handler"})
-    public static void bindViewPagerAdapter(final ViewPager pager, final TutorialActivity activity) {
 
-        final TutorialAdapter adapter = new TutorialAdapter(pager.getContext(), activity.getSupportFragmentManager(), num);
-        pager.setAdapter(adapter);
+    ViewPager viewPager;
 
-        mBinding.circleIndicator.setViewPager(pager);
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                if (currentpage == num) {
-                    currentpage = 0;
-                }
-                pager.setCurrentItem(currentpage++, true);
-            }
-        };
+    Button btnSkip;
+    Button buttonContinue;
 
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 10000, 10000);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,74 +50,155 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_tutorial);
+        setContentView(R.layout.activity_tutorial);
         TutorialActivity mContext = this;
-        PrefManager.savePref(mContext,"IsFirstLogin","1");
-        mBinding.setHandler(this);
-        mBinding.btnSkip.setOnClickListener(this);
-        mBinding.setManager(getSupportFragmentManager());
-        mBinding.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        PrefManager.savePref(mContext, "IsFirstLogin", "1");
+
+
+        initViews();
+
+
+        setUpViewpagerAndTablLayout(viewPager);
+
+    }
+
+    private void initViews() {
+
+        btnSkip = findViewById(R.id.btnSkip);
+        buttonContinue = findViewById(R.id.btnContinue);
+        viewPager = findViewById(R.id.viewPager);
+
+    }
+
+    private void setUpViewpagerAndTablLayout(ViewPager viewPager) {
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(this.getSupportFragmentManager());
+
+
+        // Add Fragments to adapter one by one
+        adapter.addFragment(new FirstNewFragment(), null);
+        adapter.addFragment(new FirstFragment(), null);
+        adapter.addFragment(new ThirdFragment(), null);
+
+        viewPager.setAdapter(adapter);
+//        viewPager.setPageTransformer(true, ZoomOutPageTransformer());
+
+        buttonContinue.setOnClickListener(v -> {
+            viewPager.setCurrentItem(currentpage+1, true);
+
+
+        });
+
+        btnSkip.setOnClickListener(v->{
+
+            viewPager.setCurrentItem(2,true);
+        });
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int i, float v, int i1) {
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
             }
 
             @Override
-            public void onPageSelected(int i) {
-
+            public void onPageSelected(int position) {
 
             }
 
             @Override
-            public void onPageScrollStateChanged(int i) {
-                if (mBinding.viewPager.getCurrentItem() == 1) {
-                    mBinding.btnSkip.setOnClickListener(new View.OnClickListener() {
-                        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                        @Override
-                        public void onClick(View v) {
-                            Intent i = new Intent(TutorialActivity.this, LoginActivity.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putString("2", "xyz");
-                            i.putExtras(bundle);
-                            startActivity(i);
-                            finishAffinity();
-                        }
+            public void onPageScrollStateChanged(int state) {
+                currentpage=viewPager.getCurrentItem();
+
+
+                if (viewPager.getCurrentItem()==0){
+
+
+                    buttonContinue.setOnClickListener(v -> {
+                        viewPager.setCurrentItem(currentpage++, true);
+
+
                     });
 
-                    mBinding.btnSkip.setText("Get started");
+                    btnSkip.setOnClickListener(v->{
 
-                    mBinding.btnGetStarted.setOnClickListener(new View.OnClickListener() {
-                        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                        @Override
-                        public void onClick(View v) {
-                            Intent i = new Intent(TutorialActivity.this, LoginActivity.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putString("2", "xyz");
-                            i.putExtras(bundle);
-                            startActivity(i);
-                            finishAffinity();
+                        viewPager.setCurrentItem(2,true);
+                    });
+                }
+
+                if (viewPager.getCurrentItem()==1){
+                    buttonContinue.setOnClickListener(v -> {
+                        viewPager.setCurrentItem(currentpage++, true);
 
 
-
-                        }
                     });
 
-                } else {
-                    mBinding.btnSkip.setText("Skip ");
+                    btnSkip.setOnClickListener(v->{
 
-                    mBinding.btnSkip.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            mBinding.viewPager.setCurrentItem(currentpage++, true);
-                        }
+                        viewPager.setCurrentItem(2,true);
                     });
-                    mBinding.btnGetStarted.setVisibility(View.GONE);
+
+                }
 
 
+                if (viewPager.getCurrentItem() == 2) {
+
+                    btnSkip.setText("Get started");
+                    btnSkip.setOnClickListener(v -> {
+
+                        Intent i = new Intent(TutorialActivity.this, OnBoardingGetStarted.class);
+                        ActivityOptionsCompat options = ActivityOptionsCompat.
+                                makeSceneTransitionAnimation(TutorialActivity.this, btnSkip, "skip");
+                        startActivity(i, options.toBundle());
+//                        Bundle bundle = new Bundle();
+//                        bundle.putString("2", "xyz");
+//                        i.putExtras(bundle);
+//                        startActivity(i);
+                        finish();
+                    });
+
+                    buttonContinue.setVisibility(View.GONE);
+
+
+
+
+                }else{
+
+                    btnSkip.setText("Skip ");
+
+                    btnSkip.setOnClickListener(v -> {
+
+                        viewPager.setCurrentItem(currentpage++, true);
+
+                    });
+
+                    buttonContinue.setVisibility(View.VISIBLE);
+                    buttonContinue.setOnClickListener(v -> {
+
+                        viewPager.setCurrentItem(currentpage++, true);
+
+                    });
                 }
             }
         });
+
+
     }
+
+//                            Intent i = new Intent(TutorialActivity.this, LoginActivity.class);
+//                            Bundle bundle = new Bundle();
+//                            bundle.putString("2", "xyz");
+//                            i.putExtras(bundle);
+//                            startActivity(i);
+//                            finishAffinity();
+
+
+//
+//                            Intent i = new Intent(TutorialActivity.this, LoginActivity.class);
+//                            Bundle bundle = new Bundle();
+//                            bundle.putString("2", "xyz");
+//                            i.putExtras(bundle);
+//                            startActivity(i);
+//                            finishAffinity();
+
 
     @Override
     public void onClick(View view) {

@@ -35,8 +35,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        paypal_button=(Button)findViewById(R.id.start_payment);
-        et_amount=(EditText)findViewById(R.id.et_amount);
+        paypal_button= findViewById(R.id.start_payment);
+        et_amount= findViewById(R.id.et_amount);
         paypal_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

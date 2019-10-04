@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+
     defaultConfig {
         applicationId "com.dinaro"
         minSdkVersion 21
@@ -51,7 +53,6 @@ android {
             buildConfigField("String", "BASE_URL", '"https://admin.dinaro.app/api/"')
         }
     }
-
 
 
     buildTypes {
@@ -111,7 +112,29 @@ dependencies {
     implementation 'com.braintreepayments.api:braintree:2.22.0'
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.google.code.gson:gson:2.6.1'
-    implementation project(path: ':pgw_sdk')
+//    implementation project(path: ':pgw_sdk')
+
+    implementation 'com.romandanylyk:pageindicatorview:1.0.1'
+
+    //navigation dependancies
+
+    def nav_version = "2.1.0"
+
+    // Java
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    def material_version = "1.1.0-alpha07"
+    implementation "com.google.android.material:material:1.1.0-alpha07"
+
+    implementation 'com.github.joielechong:countrycodepicker:2.4.1'
+
+    //add butterknife use Zelezny plugin to generate views automatically
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+
+    implementation 'com.github.mybringback22:HorizontalCalendarView-Android-:0.1.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

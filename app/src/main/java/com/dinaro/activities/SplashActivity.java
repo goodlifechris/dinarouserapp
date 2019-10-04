@@ -88,10 +88,10 @@ public class SplashActivity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         } else {
-                            Intent i = new Intent(SplashActivity.this, LoginActivity.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putString("123", "abc");
-                            i.putExtras(bundle);
+                            Intent i = new Intent(SplashActivity.this, TutorialActivity.class);
+//                            Bundle bundle = new Bundle();
+//                            bundle.putString("123", "abc");
+//                            i.putExtras(bundle);
                             startActivity(i);
                             finish();
                         }
@@ -113,7 +113,7 @@ public class SplashActivity extends AppCompatActivity {
                             startActivity(i);
                             finish();
                         } else {
-                            Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                            Intent i = new Intent(SplashActivity.this, TutorialActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("1234", "abcd");
                             i.putExtras(bundle);

@@ -1,9 +1,9 @@
 package com.dinaro.fragments;
 
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 
 import androidx.core.content.ContextCompat;
@@ -249,7 +249,6 @@ public class CalanderFragment extends Fragment implements View.OnClickListener, 
                                         } catch (ParseException e) {
                                             e.printStackTrace();
                                         }
-                                        ;
                                         recent.get(i).setmDay(format.format(c.getTime()));
 
                                         SimpleDateFormat format1 = new SimpleDateFormat("MM");

@@ -95,9 +95,6 @@ public class ValidationUtils {
     }
     private static boolean isSpecialCharEmail(char c){
         String specialChar="@#&.-_";
-        if(specialChar.contains(String.valueOf(c))){
-            return  true;
-        }
-        return false;
+        return specialChar.contains(String.valueOf(c));
     }
 }

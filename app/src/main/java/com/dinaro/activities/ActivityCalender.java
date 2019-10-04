@@ -89,7 +89,7 @@ public class ActivityCalender extends AppCompatActivity implements RobotoCalenda
 
 
                 //   for (int i = 0; i < myTransactionData.size(); i++) {
-                Set set = (Set) myTransactionData.entrySet();
+                Set set = myTransactionData.entrySet();
 
                 Iterator iterator = set.iterator();
 

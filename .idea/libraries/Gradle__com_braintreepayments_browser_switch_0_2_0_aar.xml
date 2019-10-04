@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.braintreepayments:browser-switch:0.2.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/browser-switch-0.2.0.aar/ba1bad54600b19e25bf06d61c37d5d73/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/browser-switch-0.2.0.aar/ba1bad54600b19e25bf06d61c37d5d73/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/browser-switch-0.2.0.aar/2e075bda9e0e14f5e104456b1d960eb7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/browser-switch-0.2.0.aar/2e075bda9e0e14f5e104456b1d960eb7/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

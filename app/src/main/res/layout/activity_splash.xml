@@ -7,23 +7,22 @@
     android:orientation="horizontal"
     android:background="@color/colorWhite"
     tools:context=".activities.SplashActivity">
-
     <ImageView
-        android:layout_width="@dimen/height_200dp"
-        android:id="@+id/tvDinaro"
-        android:src="@drawable/new_logo"
-       android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_height="@dimen/margin_30" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_intro_one"
+        android:scaleType="fitXY"
+        android:id="@+id/imaegviewback"/>
 
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:src="@drawable/new_tree"/>
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:src="@drawable/new_tree"/>-->
 
    <!-- <ImageView
         android:id="@+id/iv_splash"
@@ -32,5 +31,11 @@
         android:layout_height="match_parent"
         android:src="@mipmap/splashnew" />
 -->
+
+    <ImageView
+        android:layout_width="@dimen/height_150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_logo" />
 
 </RelativeLayout>

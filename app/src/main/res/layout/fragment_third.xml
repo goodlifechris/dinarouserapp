@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/colorWhite"
     android:orientation="vertical">
 
     <ImageView
@@ -11,29 +12,39 @@
         android:layout_gravity="center"
         android:src="@mipmap/introsecond" />
 
-    <TextView
-        android:id="@+id/tvWallet"
-        style="@style/customFontStyle"
+
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/intro_title_third"
-        android:textColor="#000"
-        android:textSize="@dimen/title_24sp" />
+        android:layout_gravity="bottom"
+        android:paddingTop="@dimen/marginStart_80dp"
+        android:paddingEnd="@dimen/margin_24dp"
+        android:paddingStart="@dimen/margin_24dp"
+        android:background="@drawable/background_white_gradient"
+        android:paddingBottom="@dimen/marginStart_80dp"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/tvWallet"
+            style="@style/customFontStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/intro_title_third"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/title_24sp" />
 
-    <TextView
-        android:id="@+id/tvRecords"
-        style="@style/customFontStyleRobotoRegular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="@dimen/marginStart_40dp"
-        android:layout_marginEnd="@dimen/marginEnd_40dp"
-        android:gravity="center_horizontal"
-        android:text="@string/intro_desc_third"
-        android:textColor="#000"
-        android:textSize="@dimen/subtilte_16sp" />
+        <TextView
+            android:id="@+id/tvRecords"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:text="@string/intro_desc_third"/>
 
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>

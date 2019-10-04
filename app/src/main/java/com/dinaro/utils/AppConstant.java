@@ -54,4 +54,11 @@ public class AppConstant {
  /*   public static final String FAQ_URL = "https://www.dinaro.app/faqs";
     public static final String LEGAL_URL = "https://www.dinaro.app/copy-of-privacy-dinaro";*/
 
+
+    public static String TRANSACTION_ID="id";
+    public static String TRANSACTION_TIME="time";
+    public static String TRANSACTION_NAME="name";
+    public static String TRANSACTION_AMOUNT="amount";
+    public static String TRANSACTION_ICON="icon";
+
 }

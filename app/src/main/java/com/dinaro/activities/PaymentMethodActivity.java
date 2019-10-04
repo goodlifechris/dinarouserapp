@@ -43,10 +43,10 @@ import com.dinaro.utils.AppConstant;
 import com.dinaro.utils.CommonUtils;
 import com.dinaro.utils.PrefManagerNew;
 import com.dinaro.utils.ProgressDialogUtils;
-import com.finserve.pgw_sdk_android.forpublic.ErrorResponse;
-import com.finserve.pgw_sdk_android.forpublic.PgwSdk;
-import com.finserve.pgw_sdk_android.forpublic.SetUpResp;
-import com.finserve.pgw_sdk_android.forpublic.auth.AuthData;
+//import com.finserve.pgw_sdk_android.forpublic.ErrorResponse;
+//import com.finserve.pgw_sdk_android.forpublic.PgwSdk;
+//import com.finserve.pgw_sdk_android.forpublic.SetUpResp;
+//import com.finserve.pgw_sdk_android.forpublic.auth.AuthData;
 import com.google.gson.JsonObject;
 
 import java.util.Calendar;
@@ -58,7 +58,11 @@ import retrofit2.Response;
 
 import static com.dinaro.mpesa.utils.AppConstants.PUSH_NOTIFICATION;
 
-public class PaymentMethodActivity extends AppCompatActivity implements View.OnClickListener, MPesaPaymentListener {
+public class PaymentMethodActivity extends AppCompatActivity
+//        implements
+//        View.OnClickListener
+//        , MPesaPaymentListener {
+{
     private static final String TAG = PaymentMethodActivity.class.getSimpleName();
     // private static final String PATH_TO_SERVER = "http://192.168.1.162:81/braintree/";
     // private String clientToken="eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpGVXpJMU5pSXNJbXRwWkNJNklqSXdNVGd3TkRJMk1UWXRjMkZ1WkdKdmVDSjkuZXlKbGVIQWlPakUxTmpFd01qTTJNemdzSW1wMGFTSTZJalU0WVdVME5qazBMVEUwTkRRdE5HRTNNeTFoTURobUxUa3daRFJtWm1VNU5UWXhOeUlzSW5OMVlpSTZJbkU1WkRjMVluWm1OMlJqYTJ0cmJqWWlMQ0pwYzNNaU9pSkJkWFJvZVNJc0ltMWxjbU5vWVc1MElqcDdJbkIxWW14cFkxOXBaQ0k2SW5FNVpEYzFZblptTjJSamEydHJiallpTENKMlpYSnBabmxmWTJGeVpGOWllVjlrWldaaGRXeDBJanBtWVd4elpYMHNJbkpwWjJoMGN5STZXeUp0WVc1aFoyVmZkbUYxYkhRaVhTd2liM0IwYVc5dWN5STZlMzE5Lnd5MVgxdm1qWENVV3FfQWItaTBBSlphSXUxRzRNbmVOY0l6UzZuZXB1Si1DbFpHY0pjVE5kR1dpM3I0Zk1kOXRlemR5V2JLcy1HLUdBaWlXNEc4QWN3IiwiY29uZmlnVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL3E5ZDc1YnZmN2Rja2trbjYvY2xpZW50X2FwaS92MS9jb25maWd1cmF0aW9uIiwiZ3JhcGhRTCI6eyJ1cmwiOiJodHRwczovL3BheW1lbnRzLnNhbmRib3guYnJhaW50cmVlLWFwaS5jb20vZ3JhcGhxbCIsImRhdGUiOiIyMDE4LTA1LTA4In0sImNoYWxsZW5nZXMiOltdLCJlbnZpcm9ubWVudCI6InNhbmRib3giLCJjbGllbnRBcGlVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvcTlkNzVidmY3ZGNra2tuNi9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhbmFseXRpY3MiOnsidXJsIjoiaHR0cHM6Ly9vcmlnaW4tYW5hbHl0aWNzLXNhbmQuc2FuZGJveC5icmFpbnRyZWUtYXBpLmNvbS9xOWQ3NWJ2ZjdkY2tra242In0sInRocmVlRFNlY3VyZUVuYWJsZWQiOnRydWUsInBheXBhbEVuYWJsZWQiOnRydWUsInBheXBhbCI6eyJkaXNwbGF5TmFtZSI6Ik1vYmlsb2l0dGUiLCJjbGllbnRJZCI6bnVsbCwicHJpdmFjeVVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS9wcCIsInVzZXJBZ3JlZW1lbnRVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vdG9zIiwiYmFzZVVybCI6Imh0dHBzOi8vYXNzZXRzLmJyYWludHJlZWdhdGV3YXkuY29tIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9jaGVja291dC5wYXlwYWwuY29tIiwiZGlyZWN0QmFzZVVybCI6bnVsbCwiYWxsb3dIdHRwIjp0cnVlLCJlbnZpcm9ubWVudE5vTmV0d29yayI6dHJ1ZSwiZW52aXJvbm1lbnQiOiJvZmZsaW5lIiwidW52ZXR0ZWRNZXJjaGFudCI6ZmFsc2UsImJyYWludHJlZUNsaWVudElkIjoibWFzdGVyY2xpZW50MyIsImJpbGxpbmdBZ3JlZW1lbnRzRW5hYmxlZCI6dHJ1ZSwibWVyY2hhbnRBY2NvdW50SWQiOiJtb2JpbG9pdHRlIiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sIm1lcmNoYW50SWQiOiJxOWQ3NWJ2ZjdkY2tra242IiwidmVubW8iOiJvZmYifQ==";
@@ -90,7 +94,7 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_payment_method);
         context = PaymentMethodActivity.this;
-        findViews();
+//        findViews();
         getBundle();
         preferences = getApplication().getSharedPreferences(AppConstant.SHARED_PREF, MODE_PRIVATE);
         editor = preferences.edit();
@@ -101,7 +105,7 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 
 
         mpesaPayment = MPESAPayment.getInstance();
-        mpesaPayment.setListener(this);
+//        mpesaPayment.setListener(this);
         mpesaPayment.getAccessToken();
 
         transactionId = getIntent().getStringExtra("transaction_id");
@@ -161,29 +165,29 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 
     }
 
-    private void findViews() {
-        btn1 = findViewById(R.id.btn_back_paymentmethod);
-        imageView = findViewById(R.id.iv_paymentback);
-        ivPayPal = findViewById(R.id.ivPayPal);
-       /* linearLayout = findViewById(R.id.layout_Pay);
-        payMpesa = findViewById(R.id.payMpesa);*/
-        ivCard = findViewById(R.id.ivCard);
-        ivMpesa = findViewById(R.id.ivMpesa);
-        ivPayPal = findViewById(R.id.ivPayPal);
-
-        iv_jenga = findViewById(R.id.iv_jenga);
-        ivPayPal.setOnClickListener(this);
-        ivMpesa.setOnClickListener(this);
-        ivCard.setOnClickListener(this);
-        // payMpesa.setOnClickListener(this);
-        // linearLayout.setOnClickListener(this);
-        btn1.setOnClickListener(this);
-        imageView.setOnClickListener(this);
-        ivPayPal.setOnClickListener(this);
-        iv_jenga.setOnClickListener(this);
-//        mpesaPayment.setListener(this);
-//        mpesaPayment.getAccessToken();
-    }
+//    private void findViews() {
+//        btn1 = findViewById(R.id.btn_back_paymentmethod);
+//        imageView = findViewById(R.id.iv_paymentback);
+//        ivPayPal = findViewById(R.id.ivPayPal);
+//       /* linearLayout = findViewById(R.id.layout_Pay);
+//        payMpesa = findViewById(R.id.payMpesa);*/
+//        ivCard = findViewById(R.id.ivCard);
+//        ivMpesa = findViewById(R.id.ivMpesa);
+//        ivPayPal = findViewById(R.id.ivPayPal);
+//
+//        iv_jenga = findViewById(R.id.iv_jenga);
+//        ivPayPal.setOnClickListener(this);
+//        ivMpesa.setOnClickListener(this);
+//        ivCard.setOnClickListener(this);
+//        // payMpesa.setOnClickListener(this);
+//        // linearLayout.setOnClickListener(this);
+//        btn1.setOnClickListener(this);
+//        imageView.setOnClickListener(this);
+//        ivPayPal.setOnClickListener(this);
+//        iv_jenga.setOnClickListener(this);
+////        mpesaPayment.setListener(this);
+////        mpesaPayment.getAccessToken();
+//    }
 
     private void getBundle() {
 
@@ -316,12 +320,13 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 //            }
 //
 //        }
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 DropInResult result = data.getParcelableExtra(DropInResult.EXTRA_DROP_IN_RESULT);
                 payment_method_nonce = result.getPaymentMethodNonce().getNonce();
                 //Toast.makeText(PaymentMethodActivity.this, "Nonce is ---- " + payment_method_nonce, Toast.LENGTH_LONG).show();
-                submitNonce(payment_method_nonce);
+//                submitNonce(payment_method_nonce);
                 //-->> create server side api to accept payment amount and PaymentNonce
                 // use the result to update your UI and send the payment method nonce to your server
             } else if (resultCode == Activity.RESULT_CANCELED) {
@@ -334,16 +339,16 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
             }
         }
 
-        if (requestCode == PgwSdk.CREATE_ORDER) {
-            if (resultCode == RESULT_OK) {
-                //TODO: receive the response from the data
-                Toast.makeText(context, "createbill transactionRef :" + data.getStringExtra("transactionRef"), Toast.LENGTH_SHORT).show();
-                // Log.d("data","createbill transactionRef :" + data.getStringExtra("transactionRef"));
-                // Log.d("data"," Customer OrderRef :" + data.getStringExtra("billReference"));
-            } else if (resultCode == RESULT_CANCELED) {
-                //TODO: request canceled by user. Handle it
-            }
-        }
+//        if (requestCode == PgwSdk.CREATE_ORDER) {
+//            if (resultCode == RESULT_OK) {
+//                //TODO: receive the response from the data
+//                Toast.makeText(context, "createbill transactionRef :" + data.getStringExtra("transactionRef"), Toast.LENGTH_SHORT).show();
+//                // Log.d("data","createbill transactionRef :" + data.getStringExtra("transactionRef"));
+//                // Log.d("data"," Customer OrderRef :" + data.getStringExtra("billReference"));
+//            } else if (resultCode == RESULT_CANCELED) {
+//                //TODO: request canceled by user. Handle it
+//            }
+//        }
     }
 //    private void sendPaymentNonceToServer(String paymentNonce){
 //        RequestParams params = new RequestParams("NONCE", paymentNonce);
@@ -363,156 +368,156 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
 //        });
 //    }
 
-    private void submitNonce(String payment_method_nonce) {
-        ProgressDialogUtils.show(PaymentMethodActivity.this);
-        RequestInterface requestInterface =
-                ServiceGenerator.createService(RequestInterface.class, "admin", "admin");
-
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("amount", amount);
-        jsonObject.addProperty("nonce", payment_method_nonce);
-        jsonObject.addProperty("user_id", userId/*"5d08adb80d46af5da56575a3"*/);
-//        String credentials = "admin" + ":" + "admin";
-//        final String basic = "Basic " + Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);
-
-        Call<CheckoutData> call1 = requestInterface.getPayment(jsonObject);
-        call1.enqueue(new Callback<CheckoutData>() {
-            @Override
-            public void onResponse(Call<CheckoutData> call, Response<CheckoutData> response) {
-                ProgressDialogUtils.dismiss();
-                CheckoutData checkoutData = response.body();
-                if (response.isSuccessful()) {
-                    if (checkoutData.getStatus().equals("1")) {
-
-                        NotificationUtils.createNotification(getApplicationContext(), "Your payment from Paypal is successfull.");
-                        submitData(payment_method_nonce, AppConstant.PAYPAL, amount);
-                        //Toast.makeText(PaymentMethodActivity.this, "" + checkoutData.getMessage(), Toast.LENGTH_LONG).show();
-
-                    } else {
-                        Toast.makeText(PaymentMethodActivity.this, "" + checkoutData.getMessage(), Toast.LENGTH_LONG).show();
-                        NotificationUtils.createNotification(getApplicationContext(), "Your payment from Paypal is failed.");
-                        Intent intentFailed = new Intent(PaymentMethodActivity.this, PaymentFailedActivity.class);
-                        startActivity(intentFailed);
-
-
-                    }
-                } else {
-                    Toast.makeText(PaymentMethodActivity.this, "" + response.message(), Toast.LENGTH_LONG).show();
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<CheckoutData> call, Throwable t) {
-                ProgressDialogUtils.dismiss();
-                Toast.makeText(context, "Failure !", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-    }
-
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.ivPayPal:
-                startPayment();
-                break;
-            case R.id.iv_jenga:
-
-
-                String username = "2135484601";//marchant code
-                String password = "tIEAEg0PvOfhfhqRLf5y1owlaTHwnOny";
-                String apikey = "9k8GkBYs8x81ToRlKNq0Vo2MShLS";
-                String outletCode = "0000000000";
-                AuthData authData = new AuthData(username, password, username, outletCode, apikey);  //they have to be passed in this order.
-
-                PgwSdk.getSDK(authData, new SetUpResp() {
-                    @Override
-                    public void onConnected(PgwSdk pgwSdk) {
-
-                        Toast.makeText(context, "sdk connectd", Toast.LENGTH_SHORT).show();
-                        //sdk = pgwSdk; //am assuming you already declared this variable somewhere.
-                        //TODO: SDK is ready for you to consume.
-                        if (pgwSdk.isConnected()) {
-                            String merchantWebSite = "testcompany.com"; //merchant website
-                            String orderRef = "REF001BN"; //Random minimum 9 characters
-                            float orderAmount = 250f; // order reference
-                            String currency = "KES";
-                            String orderDescription = "This is an order. A test order";
-                            Calendar calendar = Calendar.getInstance();
-                            calendar.add(Calendar.DATE, 2);
-                            String customerName = "testCustomer"; //Merchant Name
-                            String outletCode = "0000000000";//Outlet Code
-                            Date orderExpiryDate = calendar.getTime();
-                            String customerFirstName = "John"; //your customer first name
-                            String customerlastName = "Doe"; //your customer last name
-                            String customerEmail = "johndoe@abc.com"; //your customer email
-                            String customerPostcodeZip = "00100"; //your customer postal code
-                            String customerCity = "Nairobi"; //your customer current city
-                            String customerAddress = "Test Address"; //your customer current address
-                            String customerSourceIP = ""; ////your customer IP. leave it blank if you are not sure
-                            String customerWebSite = "https://www.dinaro.app/";
-//                            Intent intent = pgwSdk.createOrder(orderAmount, orderRef,
-//                                    customerWebSite, customerName, outletCode,
-//                                    orderExpiryDate, orderDescription, currency, customerlastName,
-//                                    customerEmail, customerPostcodeZip, customerCity, customerAddress,
-//                                    customerSourceIP);
-                            //startActivityForResult(intent, PgwSdk.CREATE_ORDER);
-                        }
-
-
-                    }
-
-                    @Override
-                    public void onError(ErrorResponse errorResponse) {
-                        Toast.makeText(context, "sdk is not connedct", Toast.LENGTH_SHORT).show();
-                        //TODO: an error occurred. You have access to the message code and a message through ErrorResponse
-                    }
-
-                }, context);
-
-
-                break;
-            case R.id.btn_back_paymentmethod:
-                finish();
-                break;
-
-            case R.id.iv_paymentback:
-                finish();
-                break;
-
-            case R.id.ivCard:
-                Intent intent = new Intent(PaymentMethodActivity.this, SavedCardActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("payment", "payment value");
-                intent.putExtra("transId", transactionId);
-                intent.putExtras(bundle);
-                intent.putExtra("paymentRequest", paymentRequest);
-                startActivity(intent);
-                break;
-
-            case R.id.ivMpesa:
-                // showCheckoutDialog();
-                //String phone_number = "+25471116660";
-
-                String phone_number = "0" + PrefManagerNew.getStringPreferences(PaymentMethodActivity.this, AppConstant.MOBILE);
-
-                //Toast.makeText(this,""+phone_number,Toast.LENGTH_LONG);
-
-                // System.out.println(""+PrefManagerNew.getStringPreferences(PaymentMethodActivity.this, AppConstant.MOBILE));
-
-                ProgressDialogUtils.show(PaymentMethodActivity.this);
-                mpesaPayment.performSTKPush(phone_number, paymentRequest, PaymentMethodActivity.this, 1.00);
-
-                break;
-
-            default:
-                break;
-
-        }
-    }
+//    private void submitNonce(String payment_method_nonce) {
+//        ProgressDialogUtils.show(PaymentMethodActivity.this);
+//        RequestInterface requestInterface =
+//                ServiceGenerator.createService(RequestInterface.class, "admin", "admin");
+//
+//        JsonObject jsonObject = new JsonObject();
+//        jsonObject.addProperty("amount", amount);
+//        jsonObject.addProperty("nonce", payment_method_nonce);
+//        jsonObject.addProperty("user_id", userId/*"5d08adb80d46af5da56575a3"*/);
+////        String credentials = "admin" + ":" + "admin";
+////        final String basic = "Basic " + Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);
+//
+//        Call<CheckoutData> call1 = requestInterface.getPayment(jsonObject);
+//        call1.enqueue(new Callback<CheckoutData>() {
+//            @Override
+//            public void onResponse(Call<CheckoutData> call, Response<CheckoutData> response) {
+//                ProgressDialogUtils.dismiss();
+//                CheckoutData checkoutData = response.body();
+//                if (response.isSuccessful()) {
+//                    if (checkoutData.getStatus().equals("1")) {
+//
+//                        NotificationUtils.createNotification(getApplicationContext(), "Your payment from Paypal is successfull.");
+//                        submitData(payment_method_nonce, AppConstant.PAYPAL, amount);
+//                        //Toast.makeText(PaymentMethodActivity.this, "" + checkoutData.getMessage(), Toast.LENGTH_LONG).show();
+//
+//                    } else {
+//                        Toast.makeText(PaymentMethodActivity.this, "" + checkoutData.getMessage(), Toast.LENGTH_LONG).show();
+//                        NotificationUtils.createNotification(getApplicationContext(), "Your payment from Paypal is failed.");
+//                        Intent intentFailed = new Intent(PaymentMethodActivity.this, PaymentFailedActivity.class);
+//                        startActivity(intentFailed);
+//
+//
+//                    }
+//                } else {
+//                    Toast.makeText(PaymentMethodActivity.this, "" + response.message(), Toast.LENGTH_LONG).show();
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<CheckoutData> call, Throwable t) {
+//                ProgressDialogUtils.dismiss();
+//                Toast.makeText(context, "Failure !", Toast.LENGTH_SHORT).show();
+//            }
+//
+//        });
+//    }
+//
+//
+//    @Override
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.ivPayPal:
+//                startPayment();
+//                break;
+//            case R.id.iv_jenga:
+//
+//
+//                String username = "2135484601";//marchant code
+//                String password = "tIEAEg0PvOfhfhqRLf5y1owlaTHwnOny";
+//                String apikey = "9k8GkBYs8x81ToRlKNq0Vo2MShLS";
+//                String outletCode = "0000000000";
+//                AuthData authData = new AuthData(username, password, username, outletCode, apikey);  //they have to be passed in this order.
+//
+//                PgwSdk.getSDK(authData, new SetUpResp() {
+//                    @Override
+//                    public void onConnected(PgwSdk pgwSdk) {
+//
+//                        Toast.makeText(context, "sdk connectd", Toast.LENGTH_SHORT).show();
+//                        //sdk = pgwSdk; //am assuming you already declared this variable somewhere.
+//                        //TODO: SDK is ready for you to consume.
+//                        if (pgwSdk.isConnected()) {
+//                            String merchantWebSite = "testcompany.com"; //merchant website
+//                            String orderRef = "REF001BN"; //Random minimum 9 characters
+//                            float orderAmount = 250f; // order reference
+//                            String currency = "KES";
+//                            String orderDescription = "This is an order. A test order";
+//                            Calendar calendar = Calendar.getInstance();
+//                            calendar.add(Calendar.DATE, 2);
+//                            String customerName = "testCustomer"; //Merchant Name
+//                            String outletCode = "0000000000";//Outlet Code
+//                            Date orderExpiryDate = calendar.getTime();
+//                            String customerFirstName = "John"; //your customer first name
+//                            String customerlastName = "Doe"; //your customer last name
+//                            String customerEmail = "johndoe@abc.com"; //your customer email
+//                            String customerPostcodeZip = "00100"; //your customer postal code
+//                            String customerCity = "Nairobi"; //your customer current city
+//                            String customerAddress = "Test Address"; //your customer current address
+//                            String customerSourceIP = ""; ////your customer IP. leave it blank if you are not sure
+//                            String customerWebSite = "https://www.dinaro.app/";
+////                            Intent intent = pgwSdk.createOrder(orderAmount, orderRef,
+////                                    customerWebSite, customerName, outletCode,
+////                                    orderExpiryDate, orderDescription, currency, customerlastName,
+////                                    customerEmail, customerPostcodeZip, customerCity, customerAddress,
+////                                    customerSourceIP);
+//                            //startActivityForResult(intent, PgwSdk.CREATE_ORDER);
+//                        }
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(ErrorResponse errorResponse) {
+//                        Toast.makeText(context, "sdk is not connedct", Toast.LENGTH_SHORT).show();
+//                        //TODO: an error occurred. You have access to the message code and a message through ErrorResponse
+//                    }
+//
+//                }, context);
+//
+//
+//                break;
+//            case R.id.btn_back_paymentmethod:
+//                finish();
+//                break;
+//
+//            case R.id.iv_paymentback:
+//                finish();
+//                break;
+//
+//            case R.id.ivCard:
+//                Intent intent = new Intent(PaymentMethodActivity.this, SavedCardActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("payment", "payment value");
+//                intent.putExtra("transId", transactionId);
+//                intent.putExtras(bundle);
+//                intent.putExtra("paymentRequest", paymentRequest);
+//                startActivity(intent);
+//                break;
+//
+//            case R.id.ivMpesa:
+//                // showCheckoutDialog();
+//                //String phone_number = "+25471116660";
+//
+//                String phone_number = "0" + PrefManagerNew.getStringPreferences(PaymentMethodActivity.this, AppConstant.MOBILE);
+//
+//                //Toast.makeText(this,""+phone_number,Toast.LENGTH_LONG);
+//
+//                // System.out.println(""+PrefManagerNew.getStringPreferences(PaymentMethodActivity.this, AppConstant.MOBILE));
+//
+//                ProgressDialogUtils.show(PaymentMethodActivity.this);
+//                mpesaPayment.performSTKPush(phone_number, paymentRequest, PaymentMethodActivity.this, 1.00);
+//
+//                break;
+//
+//            default:
+//                break;
+//
+//        }
+//    }
 
     public void showCheckoutDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -598,23 +603,23 @@ public class PaymentMethodActivity extends AppCompatActivity implements View.OnC
     }
 
 
-    @Override
-    public void onStkpushSuccess(String transactionId) {
-        //Toast.makeText(PaymentMethodActivity.this, "Success", Toast.LENGTH_SHORT).show();
-        ProgressDialogUtils.dismiss();
-        this.transactionId = transactionId;
-        int finalAmount = Integer.parseInt(amount) + AMOUNT;
-        submitData(transactionId, AppConstant.MPESA, String.valueOf(finalAmount));
-    }
-
-    @Override
-    public void onStkpushFailure() {
-        ProgressDialogUtils.dismiss();
-        if (CommonUtils.isOnline(PaymentMethodActivity.this)) {
-
-            Toast.makeText(PaymentMethodActivity.this, "Failure: Invalid PhoneNumer", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(PaymentMethodActivity.this, "Please check your Internet connection", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @Override
+//    public void onStkpushSuccess(String transactionId) {
+//        //Toast.makeText(PaymentMethodActivity.this, "Success", Toast.LENGTH_SHORT).show();
+//        ProgressDialogUtils.dismiss();
+//        this.transactionId = transactionId;
+//        int finalAmount = Integer.parseInt(amount) + AMOUNT;
+//        submitData(transactionId, AppConstant.MPESA, String.valueOf(finalAmount));
+//    }
+//
+//    @Override
+//    public void onStkpushFailure() {
+//        ProgressDialogUtils.dismiss();
+//        if (CommonUtils.isOnline(PaymentMethodActivity.this)) {
+//
+//            Toast.makeText(PaymentMethodActivity.this, "Failure: Invalid PhoneNumer", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(PaymentMethodActivity.this, "Please check your Internet connection", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }

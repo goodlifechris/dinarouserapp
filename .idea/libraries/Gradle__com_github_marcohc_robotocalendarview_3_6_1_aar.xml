@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.marcohc:robotocalendarview:3.6.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-robotocalendarview-3.6.1.aar/82c1564dbe0c796259c14ff9872bec6e/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-robotocalendarview-3.6.1.aar/82c1564dbe0c796259c14ff9872bec6e/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-robotocalendarview-3.6.1.aar/ce4afccb4e01d8e490edd12b7c6e013f/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-robotocalendarview-3.6.1.aar/ce4afccb4e01d8e490edd12b7c6e013f/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
