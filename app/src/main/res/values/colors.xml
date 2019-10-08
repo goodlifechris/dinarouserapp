@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#D01786</color>
     <color name="colorBlack">#000000</color>
     <color name="colorPinkDark">#e41995</color>
     <color name="colorCountry">#606060</color>
@@ -11,7 +11,7 @@
     <color name="colorCancelButton">#54c0f0</color>
     <color name="viewButton">#54c0f0</color>
     <color name="colorLime">#92BC39</color>
-    <color name="colorView">#C3C3C3</color>
+    <color name="colorView">#EEEEEE</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="color_cream">#efe8e8</color>
     <color name="colorDarkGrey">#606060</color>
@@ -35,6 +35,7 @@
     <color name="light_grey">#D3D3D3</color>
     <color name="button_color">#E21993</color>
     <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorBackground">#f4f6fa</color>
 
 
 </resources>

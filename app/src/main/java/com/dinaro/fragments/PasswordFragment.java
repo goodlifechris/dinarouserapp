@@ -2,11 +2,17 @@ package com.dinaro.fragments;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +29,7 @@ import com.dinaro.activities.HomeActivity;
  */
 public class PasswordFragment extends Fragment {
 
+    TextView textviewTitle,textviewForgotPass;
 
     public PasswordFragment() {
         // Required empty public constructor
@@ -33,42 +40,48 @@ public class PasswordFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_password, container, false);
+        View view= inflater.inflate(R.layout.fragment_password, container, false);
+
+        textviewTitle = (TextView) view.findViewById(R.id.textviewTitle);
+        textviewForgotPass = (TextView) view.findViewById(R.id.textviewForgotPass);
+
+
+        return view;
     }
 
+
+
+    public void updateTitle(){
+
+        if (getArguments().getInt("type")==1){
+            Spannable wordtoSpan = new SpannableString(getArguments().getString("title"));
+
+//            "Welcome! Login and start enjoying smooooth payments!
+            wordtoSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 33, 42 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            textviewTitle.setText(wordtoSpan);
+            textviewForgotPass.setVisibility(View.VISIBLE);
+
+        }else{
+            Spannable wordtoSpan = new SpannableString(getArguments().getString("title"));
+//            "Welcome back! Start enjoying smooooth payments again!
+            wordtoSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 28, 38 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            textviewTitle.setText(wordtoSpan);
+
+            textviewForgotPass.setVisibility(View.GONE);
+        }
+
+    }
 
     //navigation process
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        //initialize the navController and make it reference the navhost
+//initialize the navController and make it reference the navhost
         NavController navController= Navigation.findNavController(getActivity(),R.id.nav_host_fragment);
 
-
-        //initialize the buttons
-        Button button=view.findViewById(R.id.next_btn);
-        Button button1=view.findViewById(R.id.cancel_btn);
+        updateTitle();
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                                Intent i = new Intent(getActivity(), HomeActivity.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putString("2", "xyz");
-                            i.putExtras(bundle);
-                            startActivity(i);
-                            getActivity().finish();
-            }
-        });
-        //attach onlicklisteners tot he buttons
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().onBackPressed();
-            }
-        });
     }
 }

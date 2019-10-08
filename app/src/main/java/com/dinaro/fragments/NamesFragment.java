@@ -43,20 +43,20 @@ public class NamesFragment extends Fragment {
         //initialize the navController and make it reference the navhost
         NavController navController= Navigation.findNavController(getActivity(),R.id.nav_host_fragment);
 
-
-        //initialize the buttons
-        Button button=view.findViewById(R.id.next_btn);
-        Button button1=view.findViewById(R.id.cancel_btn);
-
-
-        //attach onclicklisteners to the buttons
-        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_namesFragment_to_emailAddressFragment));
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().onBackPressed();
-            }
-        });
+//
+//        //initialize the buttons
+//        Button button=view.findViewById(R.id.next_btn);
+//        Button button1=view.findViewById(R.id.cancel_btn);
+//
+//
+//        //attach onclicklisteners to the buttons
+//        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_namesFragment_to_emailAddressFragment));
+//
+//        button1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getActivity().onBackPressed();
+//            }
+//        });
     }
 }

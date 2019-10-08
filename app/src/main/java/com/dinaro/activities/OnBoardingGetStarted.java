@@ -1,5 +1,6 @@
 package com.dinaro.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,14 +45,26 @@ public class OnBoardingGetStarted extends AppCompatActivity {
             case R.id.phoneNumberFragment:
                 navController.navigate(R.id.action_phoneNumberFragment_to_checkRegisteredFragment);
                 break;
-//            case R.id.checkRegisteredFragment:
-//                break;
+            case R.id.passwordFragment:
+                Intent i = new Intent(this, HomeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("2", "xyz");
+                i.putExtras(bundle);
+                startActivity(i);
+                finish();
+                break;
+
+            case R.id.namesFragment:
+               navController.navigate(R.id.action_namesFragment_to_emailAddressFragment);
+               break;
 //
-//            case R.id.otp:
-//                break;
-//
-//            case R.id.checkRegisteredFragment:
-//                break;
+            case R.id.emailAddressFragment:
+                Bundle bundles = new Bundle();
+                bundles.putString("title", "Welcome! Login and start enjoying smooooth payments!");
+                bundles.putInt("type", 1);
+                navController.navigate(R.id.action_emailAddressFragment_to_passwordFragment,bundles);
+
+                break;
         }
 
     }

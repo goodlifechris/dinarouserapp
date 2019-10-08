@@ -51,33 +51,11 @@ public class PhoneNumberFragment extends Fragment {
         NavController navController= Navigation.findNavController(getActivity(),R.id.nav_host_fragment);
 
 
-        //initialize the buttons
-        Button button=view.findViewById(R.id.next_btn);
-        Button button1=view.findViewById(R.id.cancel_btn);
 
 
-        //set onclicklisteners to the buttons
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getActivity().onBackPressed();
-            }
-        });
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                navController.navigate(R.id.action_phoneNumberFragment_to_checkRegisteredFragment);
+//                navController.navigate(R.id.action_phoneNumberFragment_to_checkRegisteredFragment);
 
-//                Intent i = new Intent(getActivity(), HomeActivity.class);
-//                            Bundle bundle = new Bundle();
-//                            bundle.putString("2", "xyz");
-//                            i.putExtras(bundle);
-//                            startActivity(i);
-//                            getActivity().finish();
-
-            }
-        });
 
 
 

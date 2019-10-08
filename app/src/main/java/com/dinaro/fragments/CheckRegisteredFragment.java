@@ -48,9 +48,12 @@ public class CheckRegisteredFragment extends Fragment {
         Button button=view.findViewById(R.id.is_registered_btn);
         Button button1=view.findViewById(R.id.not_registered_btn);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("title", "Welcome back! Start enjoying smooooth payments again!");
+        bundle.putInt("type",2);
 
-        //attach onlicklisteners to the buttons
-        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_checkRegisteredFragment_to_passwordFragment));
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_checkRegisteredFragment_to_passwordFragment,bundle));
+
 
         button1.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_checkRegisteredFragment_to_OTPFragment));
     }

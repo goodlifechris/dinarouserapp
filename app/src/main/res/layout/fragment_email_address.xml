@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgpass"
     tools:context=".fragments.EmailAddressFragment">
 
     <View
@@ -23,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="Enter your email"
+        android:text="Enter your email address"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="32dp" />
@@ -32,8 +33,10 @@
         android:id="@+id/editTextEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Address"
+        android:hint="email@example.com"
+        android:paddingTop="@dimen/marginTop_8dp"
         android:inputType="textEmailAddress"
+        android:background="@drawable/transparent"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginStart="29dp"
        app:layout_constraintLeft_toLeftOf="parent"
@@ -51,31 +54,6 @@
         android:layout_marginLeft="16dp">
 
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintVertical_bias=".4"
-            app:layout_constraintRight_toLeftOf="@+id/cancel_btn"
-            android:id="@+id/next_btn"
-            android:text="next"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/next_btn"
-            app:layout_constraintVertical_bias=".4"
-            android:id="@+id/cancel_btn"
-            android:text="cancel"
-            />
 
     </LinearLayout>
 

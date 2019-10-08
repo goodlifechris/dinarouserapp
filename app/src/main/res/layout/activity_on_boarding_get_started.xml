@@ -29,11 +29,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:elevation="0dp"
-        app:maxImageSize="64dp"
-        app:elevation="10dp"
-        app:useCompatPadding="true"
+        android:backgroundTint="@color/white"
+        app:maxImageSize="48dp"
         android:src="@drawable/ic_right_arrow"
-        android:scaleType="center"/>
+        android:scaleType="fitXY"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

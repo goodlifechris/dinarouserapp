@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.dinaro.R;
 import com.dinaro.adapters.TutorialAdapter;
@@ -39,7 +40,6 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 
     ViewPager viewPager;
 
-    Button btnSkip;
     Button buttonContinue;
 
 
@@ -54,9 +54,7 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
         TutorialActivity mContext = this;
         PrefManager.savePref(mContext, "IsFirstLogin", "1");
 
-
         initViews();
-
 
         setUpViewpagerAndTablLayout(viewPager);
 
@@ -64,7 +62,6 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 
     private void initViews() {
 
-        btnSkip = findViewById(R.id.btnSkip);
         buttonContinue = findViewById(R.id.btnContinue);
         viewPager = findViewById(R.id.viewPager);
 
@@ -84,15 +81,10 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 //        viewPager.setPageTransformer(true, ZoomOutPageTransformer());
 
         buttonContinue.setOnClickListener(v -> {
-            viewPager.setCurrentItem(currentpage+1, true);
-
+            viewPager.setCurrentItem(1, true);
 
         });
 
-        btnSkip.setOnClickListener(v->{
-
-            viewPager.setCurrentItem(2,true);
-        });
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -118,10 +110,7 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 
                     });
 
-                    btnSkip.setOnClickListener(v->{
 
-                        viewPager.setCurrentItem(2,true);
-                    });
                 }
 
                 if (viewPager.getCurrentItem()==1){
@@ -131,22 +120,19 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
 
                     });
 
-                    btnSkip.setOnClickListener(v->{
 
-                        viewPager.setCurrentItem(2,true);
-                    });
 
                 }
 
 
                 if (viewPager.getCurrentItem() == 2) {
 
-                    btnSkip.setText("Get started");
-                    btnSkip.setOnClickListener(v -> {
+                    buttonContinue.setText("Get started");
+                    buttonContinue.setOnClickListener(v -> {
 
                         Intent i = new Intent(TutorialActivity.this, OnBoardingGetStarted.class);
                         ActivityOptionsCompat options = ActivityOptionsCompat.
-                                makeSceneTransitionAnimation(TutorialActivity.this, btnSkip, "skip");
+                                makeSceneTransitionAnimation(TutorialActivity.this, buttonContinue, "skip");
                         startActivity(i, options.toBundle());
 //                        Bundle bundle = new Bundle();
 //                        bundle.putString("2", "xyz");
@@ -155,25 +141,15 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
                         finish();
                     });
 
-                    buttonContinue.setVisibility(View.GONE);
 
 
 
 
                 }else{
 
-                    btnSkip.setText("Skip ");
-
-                    btnSkip.setOnClickListener(v -> {
-
-                        viewPager.setCurrentItem(currentpage++, true);
-
-                    });
-
-                    buttonContinue.setVisibility(View.VISIBLE);
                     buttonContinue.setOnClickListener(v -> {
 
-                        viewPager.setCurrentItem(currentpage++, true);
+                        viewPager.setCurrentItem(currentpage+1, true);
 
                     });
                 }

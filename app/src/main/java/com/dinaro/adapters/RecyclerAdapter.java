@@ -97,12 +97,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         private void bind(Transaction transaction) {
 
             image.setImageResource(Integer.parseInt(transaction.getIcon()));
-            code.setText(transaction.getId());
+            code.setText("Zuku Kenya");
 
             amountksh=("- KES " + NumberFormat.getNumberInstance(Locale.US).format( transaction.getAmount()));
             amount.setText(amountksh);
 
-            txt_name.setText(transaction.getName());
+            txt_name.setText(transaction.getTime());
             relatiVelayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

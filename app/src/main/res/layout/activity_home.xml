@@ -9,4 +9,19 @@
 
     <include layout="@layout/content_home" />
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/colorTransparent"
+        app:maxImageSize="48dp"
+        android:src="@drawable/ic_clicked_home"
+        android:scaleType="fitXY"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

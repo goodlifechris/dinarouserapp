@@ -34,12 +34,12 @@
             android:layout_marginTop="@dimen/margin_24dp"
             android:layout_height="wrap_content"
             style="@style/TextAppearance.AppCompat.Small"
-            android:text="Payments you'll come to loove!!"/>
+            android:text="Payments you'll come to loooove!"/>
         <TextView
             android:layout_width="wrap_content"
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_height="wrap_content"
-            android:text="Enjoy making payments!"/>
+            android:text="Enjoy making payments."/>
     </LinearLayout>
 
 </FrameLayout>
