@@ -77,14 +77,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView image;
+//        ImageView image;
         TextView amount, code,txt_name;
         RelativeLayout relatiVelayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            image = itemView.findViewById(R.id.imageview_paypal);
+//            image = itemView.findViewById(R.id.imageview_paypal);
             amount = itemView.findViewById(R.id.txt_Ksh);
             txt_name = itemView.findViewById(R.id.txt_name);
             code = itemView.findViewById(R.id.txt_code);
@@ -96,13 +96,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         private void bind(Transaction transaction) {
 
-            image.setImageResource(Integer.parseInt(transaction.getIcon()));
-            code.setText("Zuku Kenya");
+//            image.setImageResource(Integer.parseInt(transaction.getIcon()));
+            code.setText("Steers Ngong Rd");
 
             amountksh=("- KES " + NumberFormat.getNumberInstance(Locale.US).format( transaction.getAmount()));
             amount.setText(amountksh);
 
-            txt_name.setText(transaction.getTime());
+            txt_name.setText(transaction.getDateMonth());
             relatiVelayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

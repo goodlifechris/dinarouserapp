@@ -13,15 +13,17 @@ public class Transaction {
     double amount;
     String time;
     String name;
+    String dateMonth;
 
 
-    public Transaction(String id, String type, String icon, double amount, String time, String name) {
-        this.id = "zuku";
-        this.type = "zuku";
+    public Transaction(String id, String type, String icon, double amount, String time, String name,String dateMonth) {
+        this.id = id;
+        this.type = "Steers Ngong Rd";
         this.icon = String.valueOf(R.drawable.zuku);
         this.amount = amount;
         this.time = time;
         this.name = "payment";
+        this.dateMonth=dateMonth;
     }
 
 
@@ -72,5 +74,13 @@ public class Transaction {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDateMonth() {
+        return dateMonth;
+    }
+
+    public void setDateMonth(String dateMonth) {
+        this.dateMonth = dateMonth;
     }
 }

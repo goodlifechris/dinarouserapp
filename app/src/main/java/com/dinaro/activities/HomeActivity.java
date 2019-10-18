@@ -31,15 +31,11 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         initiateView();
 
         homeClicked();
-
-
-
 
     }
 
@@ -101,23 +97,15 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    ImageView img_settings,img_discovery,img_stats,img_home;
-
-    TextView settings,discovery,stats,home;
+    ImageView img_settings,img_discovery,img_stats,img_activity,imageviewHome;
 
     private void initiateView() {
 
-        img_home = findViewById(R.id.img_home);
+        img_activity = findViewById(R.id.img_activity);
+        imageviewHome = findViewById(R.id.imageviewHome);
         img_settings = findViewById(R.id.img_settings);
         img_discovery = findViewById(R.id.img_discovery);
         img_stats = findViewById(R.id.img_stats);
-
-
-
-        home = findViewById(R.id.home);
-        settings = findViewById(R.id.settings);
-        discovery = findViewById(R.id.discovery);
-        stats = findViewById(R.id.stats);
 
         onClick();
 
@@ -126,12 +114,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private void onClick() {
-        home.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        img_activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                homeClicked();
+                activityClicked();
                 if (navController.getCurrentDestination().getId() == R.id.activityFragment) {
 
 
@@ -140,19 +131,26 @@ public class HomeActivity extends AppCompatActivity {
                     navController.navigate(R.id.action_homeFragment_to_activityFragment);
 
 
+                }else if (navController.getCurrentDestination().getId() == R.id.discoveryFragment) {
+
+                    navController.navigate(R.id.action_discoveryFragment_to_activityFragment);
+
+
                 } else if (navController.getCurrentDestination().getId() == R.id.settingsFragment) {
 
                     navController.navigate(R.id.action_settingsFragment_to_activityFragment);
 
-                }else if (navController.getCurrentDestination().getId() == R.id.searchCalendarFragment) {
+                }else if (navController.getCurrentDestination().getId() == R.id.statsFragment) {
 
-                    navController.navigate(R.id.action_searchCalendarFragment_to_activityFragment);
+                    navController.navigate(R.id.action_statsFragment_to_activityFragment);
 
                 }
             }
         });
 
-        settings.setOnClickListener(new View.OnClickListener() {
+
+
+        img_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -164,11 +162,16 @@ public class HomeActivity extends AppCompatActivity {
                     navController.navigate(R.id.action_homeFragment_to_settingsFragment);
 
 
+                }else if (navController.getCurrentDestination().getId() == R.id.discoveryFragment) {
+
+                    navController.navigate(R.id.action_discoveryFragment_to_settingsFragment);
+
+
                 } else if (navController.getCurrentDestination().getId() == R.id.settingsFragment) {
 
-                }else if (navController.getCurrentDestination().getId() == R.id.searchCalendarFragment) {
+                }else if (navController.getCurrentDestination().getId() == R.id.statsFragment) {
 
-                    navController.navigate(R.id.action_searchCalendarFragment_to_settingsFragment);
+                    navController.navigate(R.id.action_statsFragment_to_settingsFragment);
 
                 }
 
@@ -176,35 +179,115 @@ public class HomeActivity extends AppCompatActivity {
 
         });
 
-        stats.setOnClickListener(new View.OnClickListener() {
+
+        imageviewHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                homeClicked();
+
+                if (navController.getCurrentDestination().getId() == R.id.activityFragment) {
+                    navController.navigate(R.id.action_activityFragment_to_homeFragment);
+
+                } else if (navController.getCurrentDestination().getId() == R.id.homeFragment) {
+
+
+                }else if (navController.getCurrentDestination().getId() == R.id.discoveryFragment) {
+
+                    navController.navigate(R.id.action_discoveryFragment_to_homeFragment);
+
+
+                } else if (navController.getCurrentDestination().getId() == R.id.settingsFragment) {
+
+                    navController.navigate(R.id.action_settingsFragment_to_homeFragment);
+
+                }else if (navController.getCurrentDestination().getId() == R.id.statsFragment) {
+
+                    navController.navigate(R.id.action_statsFragment_to_homeFragment);
+
+                }
+            }
+        });
+
+
+        img_stats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 statsClicked();
 
+                if (navController.getCurrentDestination().getId() == R.id.activityFragment) {
+                    navController.navigate(R.id.action_activityFragment_to_statsFragment);
+
+                } else if (navController.getCurrentDestination().getId() == R.id.homeFragment) {
+                    navController.navigate(R.id.action_homeFragment_to_statsFragment);
+
+
+                } else if (navController.getCurrentDestination().getId() == R.id.statsFragment) {
+
+                }else if (navController.getCurrentDestination().getId() == R.id.discoveryFragment) {
+
+                    navController.navigate(R.id.action_discoveryFragment_to_statsFragment);
+
+                }else if (navController.getCurrentDestination().getId() == R.id.settingsFragment) {
+
+                    navController.navigate(R.id.action_settingsFragment_to_statsFragment);
+
+                }
+
             }
         });
 
-        discovery.setOnClickListener(new View.OnClickListener() {
+        img_discovery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 discoveryClicked();
+
+                if (navController.getCurrentDestination().getId() == R.id.activityFragment) {
+                    navController.navigate(R.id.action_activityFragment_to_discoveryFragment);
+
+                } else if (navController.getCurrentDestination().getId() == R.id.homeFragment) {
+                    navController.navigate(R.id.action_homeFragment_to_discoveryFragment);
+
+
+                } else if (navController.getCurrentDestination().getId() == R.id.discoveryFragment) {
+
+                }else if (navController.getCurrentDestination().getId() == R.id.statsFragment) {
+
+                    navController.navigate(R.id.action_statsFragment_to_discoveryFragment);
+
+                }else if (navController.getCurrentDestination().getId() == R.id.settingsFragment) {
+
+                    navController.navigate(R.id.action_settingsFragment_to_discoveryFragment);
+
+                }
             }
         });
     }
 
+    private void activityClicked(){
+        final int colorPrimary = getResources().getColor(R.color.colorPrimary);
+        final int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
+        img_activity.setImageResource(R.drawable.ic_activity_selected);
+
+        img_settings.setImageResource(R.drawable.ic_settings);
+        img_stats.setImageResource(R.drawable.ic_stats);
+        img_discovery.setImageResource(R.drawable.ic_events);
+        imageviewHome.setImageResource(R.drawable.ic_non_clicked);
+
+
+
+    }
+
+
+
     private void homeClicked(){
         final int colorPrimary = getResources().getColor(R.color.colorPrimary);
         final int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
+        imageviewHome.setImageResource(R.drawable.ic_clicked_home);
 
-        home.setTextColor(colorPrimary);
-        img_home.setImageResource(R.drawable.ic_activity_selected);
-
-        settings.setTextColor(colorDefault);
-        stats.setTextColor(colorDefault);
-        discovery.setTextColor(colorDefault);
-
+        img_activity.setImageResource(R.drawable.ic_activity);
         img_settings.setImageResource(R.drawable.ic_settings);
         img_stats.setImageResource(R.drawable.ic_stats);
         img_discovery.setImageResource(R.drawable.ic_events);
@@ -216,14 +299,10 @@ public class HomeActivity extends AppCompatActivity {
         final int colorPrimary = getResources().getColor(R.color.colorPrimary);
         final int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
 
-        settings.setTextColor(colorPrimary);
+        imageviewHome.setImageResource(R.drawable.ic_non_clicked);
+
         img_settings.setImageResource(R.drawable.ic_settings_selected);
-
-        home.setTextColor(colorDefault);
-        stats.setTextColor(colorDefault);
-        discovery.setTextColor(colorDefault);
-
-        img_home.setImageResource(R.drawable.ic_activity);
+        img_activity.setImageResource(R.drawable.ic_activity);
         img_stats.setImageResource(R.drawable.ic_stats);
         img_discovery.setImageResource(R.drawable.ic_events);
 
@@ -233,14 +312,10 @@ public class HomeActivity extends AppCompatActivity {
         final int colorPrimary = getResources().getColor(R.color.colorPrimary);
         final int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
 
-        stats.setTextColor(colorPrimary);
         img_stats.setImageResource(R.drawable.ic_stats_selected);
 
-        home.setTextColor(colorDefault);
-        settings.setTextColor(colorDefault);
-        discovery.setTextColor(colorDefault);
-
-        img_home.setImageResource(R.drawable.ic_activity);
+        imageviewHome.setImageResource(R.drawable.ic_non_clicked);
+        img_activity.setImageResource(R.drawable.ic_activity);
         img_settings.setImageResource(R.drawable.ic_settings);
         img_discovery.setImageResource(R.drawable.ic_events);
 
@@ -253,14 +328,10 @@ public class HomeActivity extends AppCompatActivity {
         final int colorPrimary = getResources().getColor(R.color.colorPrimary);
         final int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
 
-        discovery.setTextColor(colorPrimary);
         img_discovery.setImageResource(R.drawable.ic_events_selected);
 
-        home.setTextColor(colorDefault);
-        settings.setTextColor(colorDefault);
-        stats.setTextColor(colorDefault);
-
-        img_home.setImageResource(R.drawable.ic_activity);
+        imageviewHome.setImageResource(R.drawable.ic_non_clicked);
+        img_activity.setImageResource(R.drawable.ic_activity);
         img_settings.setImageResource(R.drawable.ic_settings);
         img_stats.setImageResource(R.drawable.ic_stats);
 

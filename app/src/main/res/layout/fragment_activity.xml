@@ -3,71 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@color/colorWhite"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ActivityFragment">
 
-    <TextView
-        android:id="@+id/textViewRecentActivity"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_24dp"
-        android:layout_marginLeft="24dp"
-        android:text="Recent activity"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewCalendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="24dp"
-        android:src="@drawable/calender"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardviewSearch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="24dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="4dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRecentActivity">
 
         <EditText
+            android:id="@+id/editTextSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="0.1dp"
+            android:layout_marginTop="56dp"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_marginLeft="@dimen/margin_24dp"
+            android:layout_marginRight="@dimen/margin_24dp"
+            android:layout_marginBottom="@dimen/tvconfirm12"
             android:gravity="center"
-            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/background_search"
             android:hint="Search"
             android:padding="@dimen/margin_top_8dp" />
 
-    </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:elevation="6dp"
-        app:cardElevation="4dp"
-        android:background="@color/colorWhite"
         android:layout_marginTop="12dp"
-        android:layout_marginLeft="@dimen/margin_24dp"
-        android:layout_marginRight="@dimen/margin_24dp"
+        android:layout_marginLeft="@dimen/tvconfirm12"
+        android:layout_marginRight="@dimen/tvconfirm12"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardviewSearch">
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -80,8 +51,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="JANUARY "
-                android:textSize="9dp"
-                android:layout_marginLeft="@dimen/margin_24dp"
+                android:textSize="9sp"
+                android:layout_marginLeft="12dp"
                 android:textStyle="bold"
                 android:layout_marginTop="18dp"
                 style="@style/TextAppearance.AppCompat.Small"
@@ -95,6 +66,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginTop="8dp"
                 app:layout_constraintRight_toRightOf="parent"
+                tools:listitem="@layout/layout_storename_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="0dp" />
 
@@ -102,7 +74,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 

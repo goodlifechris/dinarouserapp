@@ -22,6 +22,7 @@ import androidx.navigation.Navigation;
 
 import com.dinaro.R;
 import com.dinaro.activities.HomeActivity;
+import com.dinaro.utils.AppConstant;
 
 
 /**
@@ -53,21 +54,21 @@ public class PasswordFragment extends Fragment {
 
     public void updateTitle(){
 
-        if (getArguments().getInt("type")==1){
-            Spannable wordtoSpan = new SpannableString(getArguments().getString("title"));
+        if (getArguments().getInt("type")== 1){
+            Spannable wordtoSpan = new SpannableString("Start enjoying smooooth payments!");
 
-//            "Welcome! Login and start enjoying smooooth payments!
-            wordtoSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 33, 42 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//            "Start enjoying smooooth payments!
+            wordtoSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 15, 23 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            textviewTitle.setText(wordtoSpan);
+            textviewForgotPass.setVisibility(View.GONE);
+
+        }else{
+            Spannable wordtoSpan = new SpannableString("Start enjoying smooooth payments again!");
+//            "Start enjoying smooooth payments again!
+            wordtoSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 15, 23 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             textviewTitle.setText(wordtoSpan);
             textviewForgotPass.setVisibility(View.VISIBLE);
 
-        }else{
-            Spannable wordtoSpan = new SpannableString(getArguments().getString("title"));
-//            "Welcome back! Start enjoying smooooth payments again!
-            wordtoSpan.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 28, 38 , Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            textviewTitle.setText(wordtoSpan);
-
-            textviewForgotPass.setVisibility(View.GONE);
         }
 
     }

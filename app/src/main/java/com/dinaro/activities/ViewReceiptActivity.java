@@ -33,8 +33,8 @@ public class ViewReceiptActivity extends AppCompatActivity {
     @BindView(R.id.textViewAmount)
     TextView textViewAmount;
 
-    @BindView(R.id.imageViewIcon)
-    ImageView imageViewIcon;
+//    @BindView(R.id.imageViewIcon)
+//    ImageView imageViewIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class ViewReceiptActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 //        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorWhite)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorTransparent)));
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -53,10 +53,10 @@ public class ViewReceiptActivity extends AppCompatActivity {
         Intent intent = getIntent();
         textViewID.setText(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_ID));
         textViewName.setText(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_NAME));
-        textViewTime.setText(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_TIME));
+//        textViewTime.setText(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_TIME));
         textViewAmount.setText(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_AMOUNT));
         textViewID.setText(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_ID));
-        imageViewIcon.setImageResource(Integer.parseInt(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_ICON)));
+//        imageViewIcon.setImageResource(Integer.parseInt(Objects.requireNonNull(intent.getExtras()).getString(AppConstant.TRANSACTION_ICON)));
 
     }
 

@@ -7,12 +7,11 @@
     android:foreground="?attr/selectableItemBackground"
     android:layout_marginBottom="8dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageview_paypal"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/zuku"/>
+        android:src="@drawable/steers"/>
 
     <TextView
         android:id="@+id/txt_code"
@@ -32,7 +31,7 @@
         android:layout_alignStart="@+id/txt_code"
         android:layout_alignLeft="@+id/txt_code"
         android:layout_marginTop="4dp"
-        android:textSize="9dp"
+        android:textSize="9sp"
         android:text="Transaction ID" />
 
 
@@ -42,7 +41,6 @@
         android:layout_height="wrap_content"
         android:text="@string/KES"
         android:layout_alignParentRight="true"
-
         android:textColor="@color/colorBlack"
         android:layout_marginLeft="100dp"/>
 
@@ -55,6 +53,6 @@
         android:layout_below="@id/txt_Ksh"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:textSize="9dp" />
+        android:textSize="9sp" />
 
 </RelativeLayout>

@@ -41,6 +41,8 @@
         <com.rilixtech.widget.countrycodepicker.CountryCodePicker
             android:id="@+id/ccp"
             android:layout_width="wrap_content"
+            app:ccp_textSize="18sp"
+            android:layout_marginTop="4dp"
             android:layout_height="wrap_content" />
 
         <EditText

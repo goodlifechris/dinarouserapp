@@ -1,282 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.HomeFragment">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@color/white">
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="vertical">
+
+
+
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:padding="@dimen/margin_24dp"
-            android:layout_height="match_parent">
-
-            <TextView
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Payments"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"/>
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginBottom="@dimen/paddingConfirmPay_4dp"
-                app:layout_constraintBottom_toTopOf="@id/cardview"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="4dp"
-                app:layout_constraintBottom_toTopOf="@id/search"
-                android:layout_marginTop="@dimen/paddingConfirmPay_4dp"
-                android:elevation="4dp"
-                app:cardElevation="4dp"
-                app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/marginTop_8dp"
-                    android:padding="@dimen/margin_top_8dp"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/TextAppearance.AppCompat.Body1"
-                        android:text="Recent"/>
-                    <HorizontalScrollView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/ic_launcher"
-                                android:layout_margin="@dimen/margin_top_8dp"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/ic_launcher"
-                                android:layout_margin="@dimen/margin_top_8dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/ic_launcher"
-                                android:layout_margin="@dimen/margin_top_8dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/ic_launcher"
-                                android:layout_margin="@dimen/margin_top_8dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/ic_launcher"
-                                android:layout_margin="@dimen/margin_top_8dp"/>
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@mipmap/ic_launcher"
-                                android:layout_margin="@dimen/margin_top_8dp"/>
-                        </LinearLayout>
-
-                    </HorizontalScrollView>
-
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:id="@+id/search"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Search"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginTop="@dimen/tvconfirm12"
-                app:layout_constraintTop_toBottomOf="@+id/cardview"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/search"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:cardCornerRadius="@dimen/margin_24dp"
-                android:layout_margin="@dimen/margin_top_8dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:elevation="4dp"
-                app:cardElevation="4dp">
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_top_8dp"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:hint="Type Merchant name"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <TextView
-                android:id="@+id/popular"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Popular"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_marginBottom="@dimen/marginTop_8dp"
-                android:layout_marginTop="@dimen/tvconfirm12"
-                app:layout_constraintBottom_toTopOf="@+id/linearlayout_two"
-                app:layout_constraintTop_toBottomOf="@+id/cardview2"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:context=".fragments.PaymentsFragment">
 
             <LinearLayout
-                android:id="@+id/linearlayout_two"
+                android:id="@+id/linearlayout"
+                style="@style/Headline"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/popular"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_dinaro_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView_dinaro_logo">
 
-                android:layout_marginTop="@dimen/marginTop_8dp"
-                android:orientation="vertical"
-                app:layout_constraintRight_toRightOf="parent">
+                <TextView
+                    android:id="@+id/textView_storename"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="16dp"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_marginEnd="112dp"
+                    android:layout_marginRight="112dp"
+                    android:text="Payments"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView_dinaro_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/imageView_dinaro_logo"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="4dp"
+
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="centerInside"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_icon_logo"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Recent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="24dp"
+                android:textColor="#000"/>
+
+
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:weightSum="2"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="6">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="88dp"
+                        android:layout_margin="8dp"
                         android:layout_weight="1"
-                        android:layout_margin="@dimen/marginTop_8dp"
-                        android:background="@drawable/pink_button"
-                        android:layout_height="@dimen/layoutheight_100dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:src="@mipmap/ic_launcher"/>
-                    </androidx.cardview.widget.CardView>
+                        android:src="@drawable/dormans"/>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="88dp"
                         android:layout_weight="1"
-                        android:layout_margin="@dimen/marginTop_8dp"
-                        android:layout_height="@dimen/layoutheight_100dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_launcher"/>
-                    </androidx.cardview.widget.CardView>
+                        android:layout_margin="8dp"
+                        android:src="@drawable/ocean"/>
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="88dp"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/java"/>
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="88dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/dormans"/>
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="88dp"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/ocean"/>
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="88dp"
+                        android:layout_weight="1"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/java"/>
+
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/popular"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:weightSum="2"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_margin="@dimen/marginTop_8dp"
-                        android:background="@drawable/pink_button"
-                        android:layout_height="@dimen/layoutheight_100dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:src="@mipmap/ic_launcher"/>
-                    </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_margin="@dimen/marginTop_8dp"
-                        android:layout_height="@dimen/layoutheight_100dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_launcher"/>
-                    </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/popular"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:weightSum="2"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_margin="@dimen/marginTop_8dp"
-                        android:background="@drawable/pink_button"
-                        android:layout_height="@dimen/layoutheight_100dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:src="@mipmap/ic_launcher"/>
-                    </androidx.cardview.widget.CardView>
+            </HorizontalScrollView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_margin="@dimen/marginTop_8dp"
-                        android:layout_height="@dimen/layoutheight_100dp">
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_launcher"/>
-                    </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:text="Search"
+                />
+
+            <EditText
+                android:id="@+id/move"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:hint="Type merchant name"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:gravity="center"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@drawable/background_search" />
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:textSize="18sp"
+                android:text="Popular"/>
+
+
+            <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:paddingStart="@dimen/tvconfirm12"
+            android:paddingRight="12dp"
+            android:layout_weight="2">
+
+            <ImageView
+
+                android:layout_width="0dp"
+                android:layout_height="124dp"
+                android:src="@drawable/brew"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/imageViewSteers"
+                android:layout_width="0dp"
+                android:layout_height="124dp"
+                android:src="@drawable/steers"
+                android:layout_marginEnd="@dimen/tvconfirm12"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:paddingStart="@dimen/tvconfirm12"
+                android:paddingRight="12dp"
+                android:layout_weight="2">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="124dp"
+                    android:src="@drawable/branch"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/imageViewAirtel"
+                    android:layout_width="0dp"
+                    android:layout_height="124dp"
+                    android:onClick="gotoAirtel"
+                    android:src="@drawable/airtelbig"
+                    android:layout_marginEnd="@dimen/tvconfirm12"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:paddingStart="@dimen/tvconfirm12"
+                android:paddingRight="12dp"
+                android:layout_weight="2">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="124dp"
+                    android:src="@drawable/saf"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="124dp"
+                    android:src="@drawable/carrefour"
+                    android:layout_marginEnd="@dimen/tvconfirm12"
+                    android:layout_weight="1"/>
+
             </LinearLayout>
 
 
 
+        </LinearLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </LinearLayout>
+
+
+
+
+
+
+
+
+
 </ScrollView>
-</FrameLayout>
+

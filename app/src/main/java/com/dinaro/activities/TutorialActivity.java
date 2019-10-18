@@ -131,14 +131,15 @@ public class TutorialActivity extends AppCompatActivity implements View.OnClickL
                     buttonContinue.setOnClickListener(v -> {
 
                         Intent i = new Intent(TutorialActivity.this, OnBoardingGetStarted.class);
-                        ActivityOptionsCompat options = ActivityOptionsCompat.
-                                makeSceneTransitionAnimation(TutorialActivity.this, buttonContinue, "skip");
-                        startActivity(i, options.toBundle());
+//                        ActivityOptionsCompat options = ActivityOptionsCompat.
+//                                makeSceneTransitionAnimation(TutorialActivity.this, buttonContinue, "skip");
+//                        startActivity(i, options.toBundle());
+                        startActivity(i);
 //                        Bundle bundle = new Bundle();
 //                        bundle.putString("2", "xyz");
 //                        i.putExtras(bundle);
 //                        startActivity(i);
-                        finish();
+//                        finish();
                     });
 
 
