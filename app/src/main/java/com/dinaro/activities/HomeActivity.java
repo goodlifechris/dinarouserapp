@@ -34,48 +34,9 @@ public class HomeActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         initiateView();
-
         homeClicked();
-
     }
 
-
-
-
-//
-//    private void activityClicked(){
-//        int colorPrimary = getResources().getColor(R.color.colorAccent);
-//        int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
-//
-////        imageViewHome.setImageResource(R.drawable.ic_non_clicked);
-//
-//
-////        txtActivity.setTextColor(colorPrimary);
-////        txtActivity.setCompoundDrawablesWithIntrinsicBounds(null, changeIconColor(this,R.drawable.ic_activity) , null, null);
-////
-////
-////        txtSettings.setTextColor(colorDefault);
-////        txtSettings.setCompoundDrawablesWithIntrinsicBounds(null, changeIconColorBack(this,R.drawable.ic_setting) , null, null);
-//
-//
-//    }
-
-//    private void settingsClicked(){
-//        int colorPrimary = getResources().getColor(R.color.colorAccent);
-//        int colorDefault = getResources().getColor(R.color.colorGreyPrimary);
-//
-////        imageViewHome.setImageResource(R.drawable.ic_non_clicked);
-//
-//
-//        txtSettings.setTextColor(colorPrimary);
-//        txtSettings.setCompoundDrawablesWithIntrinsicBounds(null, changeIconColor(this,R.drawable.ic_setting) , null, null);
-//
-//
-//        txtActivity.setTextColor(colorDefault);
-//        txtActivity.setCompoundDrawablesWithIntrinsicBounds(null, changeIconColorBack(this,R.drawable.ic_activity) , null, null);
-//
-//
-//    }
 
     private Drawable changeIconColor(Context context , int drawable){
         Drawable unwrappedDrawable = AppCompatResources.getDrawable(context, drawable);

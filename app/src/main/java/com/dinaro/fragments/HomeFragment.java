@@ -11,9 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.dinaro.R;
 import com.dinaro.activities.OnClickPaymentActivity;
+import com.google.android.material.appbar.AppBarLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +34,19 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_home, container, false);
+        AppBarLayout appBarLayout=view.findViewById(R.id.appBarLayout);
+        LinearLayout linearlayoutMajor=view.findViewById(R.id.linearlayoutMajor);
 
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
+                linearlayoutMajor.setAlpha(1.0f - Math.abs(verticalOffset / (float)
+                        appBarLayout.getTotalScrollRange()));
+
+
+            }
+        });
 
         imageViewSteers=view.findViewById(R.id.imageViewSteers);
         imageViewSteers.setOnClickListener(new View.OnClickListener() {
