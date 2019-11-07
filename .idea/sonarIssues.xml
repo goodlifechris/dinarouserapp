@@ -423,6 +423,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../akibank/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../akibank/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../akibank/gradle/wrapper/gradle-wrapper.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../flussonic/example/app/src/main/java/com/appomart/erlyvideo_android/Control/ServerConnect.java">
           <value>
             <set />

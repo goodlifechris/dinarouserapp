@@ -2,11 +2,15 @@ package com.dinaro.fragments;
 
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +20,8 @@ import android.widget.LinearLayout;
 import com.dinaro.R;
 import com.dinaro.activities.OnClickPaymentActivity;
 import com.google.android.material.appbar.AppBarLayout;
+
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,6 +76,11 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
+
+
+
+
         return view;
     }
 

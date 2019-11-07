@@ -1,6 +1,9 @@
 package com.dinaro.activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -14,11 +17,14 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dinaro.R;
+
+import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -297,6 +303,7 @@ public class HomeActivity extends AppCompatActivity {
         img_stats.setImageResource(R.drawable.ic_stats);
 
 
+        setLocale();
 
 
 
@@ -304,4 +311,17 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+
+    public void setLocale() {
+        Locale myLocale = new Locale("en");
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = myLocale;
+        res.updateConfiguration(conf, dm);
+
+        Intent refresh = new Intent(this, HomeActivity.class);
+        startActivity(refresh);
+        finish();
+    }
 }

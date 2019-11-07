@@ -23,6 +23,7 @@
         <activity
             android:name=".activities.HomeActivity"
             android:launchMode="singleTop"
+            android:configChanges="locale|orientation"
             android:windowSoftInputMode="adjustNothing"
             android:label="@string/title_activity_home"
 
