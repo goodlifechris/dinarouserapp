@@ -29,6 +29,7 @@
             app:piv_viewPager="@id/viewPager"
             app:piv_padding="6dp"
             app:piv_radius="3dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

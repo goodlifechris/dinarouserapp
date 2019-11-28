@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.braintreepayments.api:google-payment:3.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-google-payment-3.0.0.aar/0b15805a7f46bdf13df81138e001cbfc/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-google-payment-3.0.0.aar/0b15805a7f46bdf13df81138e001cbfc/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-google-payment-3.0.0.aar/ac77bd26670f1dbdad9e0855e99bc653/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-google-payment-3.0.0.aar/ac77bd26670f1dbdad9e0855e99bc653/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

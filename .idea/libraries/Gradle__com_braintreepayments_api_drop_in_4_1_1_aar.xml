@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.braintreepayments.api:drop-in:4.1.1@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-drop-in-4.1.1.aar/072650ff861d9a2539574e90c7fd959c/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-drop-in-4.1.1.aar/9da7224e425f354af95a3e13271be89a/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-drop-in-4.1.1.aar/072650ff861d9a2539574e90c7fd959c/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-drop-in-4.1.1.aar/072650ff861d9a2539574e90c7fd959c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-drop-in-4.1.1.aar/9da7224e425f354af95a3e13271be89a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/jetified-drop-in-4.1.1.aar/9da7224e425f354af95a3e13271be89a/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
