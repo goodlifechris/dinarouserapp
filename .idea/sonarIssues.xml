@@ -453,6 +453,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../Hewani/app/src/main/res/drawable/ic_twitter.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../Hewani/app/src/main/res/layout/content_main.xml">
           <value>
             <set />
@@ -493,12 +498,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/Nexus.iml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/build.gradle">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/LandingpageActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/activity/AssetDetailActivityFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/activity/GetIPFActivity.java">
           <value>
             <set />
           </value>
@@ -538,6 +563,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/activity/TopUpActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/activity/VerificationActivity.java">
           <value>
             <set />
@@ -569,6 +599,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/activity/ui/tools/ToolsFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/adapter/RecyclerviewGetInvoicesAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/dbroom/PaymentOption.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/fragment/ConfirmationFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/java/ke/co/nexus/fragment/MyTopUpOptionsFragment.java">
           <value>
             <set />
           </value>
@@ -614,6 +664,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/drawable/button_curved_corners_white_stroke.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/activity_get_ipf.xml">
           <value>
             <set />
           </value>
@@ -673,6 +728,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/content_top_up.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/fragment_asset_detail.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/fragment_confirmation.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/fragment_first_landing.xml">
           <value>
             <set />
@@ -698,7 +768,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/fragment_success.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/fragment_third_landing.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/layout/item_invoices.xml">
           <value>
             <set />
           </value>
@@ -709,6 +789,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/menu/menu_kyc_search.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../nexus/app/src/main/res/navigation/nav_graph_top_up.xml">
           <value>
             <set />
           </value>
