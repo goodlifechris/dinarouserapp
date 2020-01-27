@@ -111,7 +111,7 @@ dependencies {
     implementation 'com.braintreepayments.api:braintree:2.22.0'
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.google.code.gson:gson:2.6.1'
-    implementation project(path: ':pgw_sdk')
+//    implementation project(path: ':pgw_sdk')
 
 }
 apply plugin: 'com.google.gms.google-services'
